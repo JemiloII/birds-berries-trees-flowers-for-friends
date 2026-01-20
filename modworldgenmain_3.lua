@@ -62,19 +62,19 @@ GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berrygree = .03
 end
 
 if GLOBAL.terrain.rooms.BGDeepForest then
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berryblue = .02
---GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berryblu2 = .01
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berrygree = .01
---GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berrygre2 = .005
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.appletree = .3
+GLOBAL.terrain.rooms.BGDeepForest.contents.distributeprefabs.berryblue = .02
+--GLOBAL.terrain.rooms.BGDeepForest.contents.distributeprefabs.berryblu2 = .01
+GLOBAL.terrain.rooms.BGDeepForest.contents.distributeprefabs.berrygree = .01
+--GLOBAL.terrain.rooms.BGDeepForest.contents.distributeprefabs.berrygre2 = .005
+GLOBAL.terrain.rooms.BGDeepForest.contents.distributeprefabs.appletree = .3
 end
 
 if GLOBAL.terrain.rooms.BGForest then
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berryblue = .01
---GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berryblu2 = .005
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berrygree = .005
---GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berrygre2 = .002
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.appletree = .1
+GLOBAL.terrain.rooms.BGForest.contents.distributeprefabs.berryblue = .01
+--GLOBAL.terrain.rooms.BGForest.contents.distributeprefabs.berryblu2 = .005
+GLOBAL.terrain.rooms.BGForest.contents.distributeprefabs.berrygree = .005
+--GLOBAL.terrain.rooms.BGForest.contents.distributeprefabs.berrygre2 = .002
+GLOBAL.terrain.rooms.BGForest.contents.distributeprefabs.appletree = .1
 end
 
 
