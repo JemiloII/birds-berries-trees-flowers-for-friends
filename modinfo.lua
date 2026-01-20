@@ -13,17 +13,6 @@ dst_compatible = true
 configuration_options =
 {
     {
-        name = "disease_birds_enabled",
-        label = "Disease Birds",
-        hover = "Enable or disable sick birds (Dirtybird and Yellowbird)",
-        options =
-        {
-            {description = "Disabled", data = false},
-            {description = "Enabled", data = true},
-        },
-        default = false,
-    },
-    {
         name = "blueberry_enabled",
         label = "Blueberry Bushes",
         hover = "Enable or disable blueberry bushes spawning in the world",
@@ -68,17 +57,6 @@ configuration_options =
         default = true,
     },
     {
-        name = "birds_enabled",
-        label = "Mod Birds",
-        hover = "Enable or disable new birds from this mod",
-        options =
-        {
-            {description = "Disabled", data = false},
-            {description = "Enabled", data = true},
-        },
-        default = true,
-    },
-    {
         name = "tree_regrowth",
         label = "Apple Tree Regrowth",
         hover = "Control how fast apple trees regrow and spread",
@@ -92,5 +70,27 @@ configuration_options =
             {description = "Very Fast", data = 2},
         },
         default = 1,
+    },
+    {
+        name = "birds_enabled",
+        label = "Mod Birds",
+        hover = "Enable or disable new birds from this mod",
+        options =
+        {
+            {description = "Disabled", data = false},
+            {description = "Enabled", data = true},
+        },
+        default = true,
+    },
+    {
+        name = "disease_birds_enabled",
+        label = "Disease Birds",
+        hover = "Enable or disable sick birds (Dirtybird and Yellowbird)",
+        options =
+        {
+            {description = "Disabled", data = false},
+            {description = "Enabled", data = true},
+        },
+        default = false,
     },
 }
