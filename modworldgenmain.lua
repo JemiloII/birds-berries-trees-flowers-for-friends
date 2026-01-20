@@ -1,10 +1,11 @@
 GLOBAL.require("map/terrain")
 
 -- Get configuration options
-local BLUEBERRY_ENABLED = GetModConfigData("blueberry_enabled")
-local GREENBERRY_ENABLED = GetModConfigData("greenberry_enabled")
-local PINEAPPLE_ENABLED = GetModConfigData("pineapple_enabled")
-local APPLETREE_ENABLED = GetModConfigData("appletree_enabled")
+local modname = KnownModIndex:GetModActualName("Birds, Berries, Trees, and Flowers for Friends")
+local BLUEBERRY_ENABLED = GetModConfigData("blueberry_enabled", modname)
+local GREENBERRY_ENABLED = GetModConfigData("greenberry_enabled", modname)
+local PINEAPPLE_ENABLED = GetModConfigData("pineapple_enabled", modname)
+local APPLETREE_ENABLED = GetModConfigData("appletree_enabled", modname)
 
 -- Helper function to add prefabs based on config
 local function AddBerries(room, blue1, blue2, green1, green2)

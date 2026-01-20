@@ -156,7 +156,8 @@
     AddCookerRecipe("cookpot", treeapplepierecipe)
 
         -- Add custom bird spawner if birds are enabled
-        local BIRDS_ENABLED = GetModConfigData("birds_enabled")
+        local modname = KnownModIndex:GetModActualName("Birds, Berries, Trees, and Flowers for Friends")
+        local BIRDS_ENABLED = GetModConfigData("birds_enabled", modname)
         if BIRDS_ENABLED then
           AddPrefabPostInit("forest", function(inst)
             if GLOBAL.TheWorld.ismastersim then
