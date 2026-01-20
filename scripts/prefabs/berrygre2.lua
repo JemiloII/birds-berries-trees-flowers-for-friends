@@ -98,9 +98,6 @@ local function onpickedfn(inst, picker)
             inst.AnimState:PushAnimation("idle")
             setberriesonanimover(inst)
         end
-
-            end
-        end
     end
     if not picker:HasTag("berrythief") and math.random() < TUNING.PERD_SPAWNCHANCE then
         inst:DoTaskInTime(3 + math.random() * 3, spawnperd)
