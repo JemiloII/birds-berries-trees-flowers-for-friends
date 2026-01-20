@@ -1,5 +1,3 @@
-
-
 local function setberries(inst, pct)
     if inst._setberriesonanimover then
         inst._setberriesonanimover = nil
@@ -218,6 +216,7 @@ local function createbush(name, inspectname, berryname, master_postinit)
     local assets =
     {
         Asset("ANIM", "anim/"..name..".zip"),
+        Asset("ANIM", "anim/berrybush2_diseased_build.zip"),
     }
 
     local prefabs =

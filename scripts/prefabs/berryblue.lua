@@ -1,5 +1,3 @@
-
-
 local function setberries(inst, pct)
     if inst._setberriesonanimover then
         inst._setberriesonanimover = nil
@@ -323,5 +321,3 @@ local function juicy_postinit(inst)
 end
 
 return createbush("berryblue", "berryblue", "berrybl", normal_postinit)
-    --createbush("berryblu2", "berryblu2", "berrybl", normal_postinit)
-    --createbush("berrybush_juicy", "berrybush_juicy", "berries_juicy", juicy_postinit)
