@@ -10,8 +10,8 @@ assert(TheWorld.ismastersim, "BirdSpawner should not exist on client")
 --[[ Constants ]]
 --------------------------------------------------------------------------
 
--- Get disease configuration
-local DISEASE_ENABLED = GetModConfigData("disease_enabled")
+-- Get disease birds configuration
+local DISEASE_BIRDS_ENABLED = GetModConfigData("disease_birds_enabled")
 
 --Note: in winter, 'robin' is replaced with 'robin_winter' automatically
 local BIRD_TYPES_ALL =
@@ -37,7 +37,7 @@ local BIRD_TYPES_ALL =
 
 -- Filter out disease birds if disease is disabled
 local function FilterDiseaseBirds(bird_types)
-    if DISEASE_ENABLED then
+    if DISEASE_BIRDS_ENABLED then
         return bird_types
     end
 

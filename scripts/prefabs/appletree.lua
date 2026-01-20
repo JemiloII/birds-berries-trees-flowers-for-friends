@@ -637,10 +637,17 @@ local function tree(name, build, stage, data)
         
         inst.growfromseed = handler_growfromseed
 
-		inst:AddComponent("appleregrowth")
-        inst.components.appleregrowth:SetRegrowthRate(5760)
-        inst.components.appleregrowth:SetProduct("appletree")
-        inst.components.appleregrowth:SetSearchTag("appletree")
+		-- Add apple tree regrowth based on configuration
+        local TREE_REGROWTH_MULTIPLIER = GetModConfigData("tree_regrowth")
+        if TREE_REGROWTH_MULTIPLIER > 0 then
+            inst:AddComponent("appleregrowth")
+            -- Base regrowth rate is 5760, adjusted by multiplier
+            -- Lower multiplier = slower growth (more time between spawns)
+            local adjusted_rate = 5760 / TREE_REGROWTH_MULTIPLIER
+            inst.components.appleregrowth:SetRegrowthRate(adjusted_rate)
+            inst.components.appleregrowth:SetProduct("appletree")
+            inst.components.appleregrowth:SetSearchTag("appletree")
+        end
 
         ---------------------        
         inst:AddComponent("timer")

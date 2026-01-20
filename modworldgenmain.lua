@@ -1,102 +1,108 @@
 GLOBAL.require("map/terrain")
 
+-- Get configuration options
+local BLUEBERRY_ENABLED = GetModConfigData("blueberry_enabled")
+local GREENBERRY_ENABLED = GetModConfigData("greenberry_enabled")
+local PINEAPPLE_ENABLED = GetModConfigData("pineapple_enabled")
+local APPLETREE_ENABLED = GetModConfigData("appletree_enabled")
+
+-- Helper function to add prefabs based on config
+local function AddBerries(room, blue1, blue2, green1, green2)
+    if BLUEBERRY_ENABLED then
+        room.contents.distributeprefabs.berryblue = blue1
+        room.contents.distributeprefabs.berryblu2 = blue2
+    end
+    if GREENBERRY_ENABLED then
+        room.contents.distributeprefabs.berrygree = green1
+        room.contents.distributeprefabs.berrygre2 = green2
+    end
+end
+
+local function AddAppleTrees(room, amount)
+    if APPLETREE_ENABLED then
+        room.contents.distributeprefabs.appletree = amount
+    end
+end
+
+local function AddPineapples(room, amount)
+    if PINEAPPLE_ENABLED then
+        room.contents.distributeprefabs.pineapple = amount
+    end
+end
+
 if GLOBAL.terrain.rooms.DeepDeciduous then
-GLOBAL.terrain.rooms.DeepDeciduous.contents.distributeprefabs.berryblue = .06
-GLOBAL.terrain.rooms.DeepDeciduous.contents.distributeprefabs.berryblu2 = .04
-GLOBAL.terrain.rooms.DeepDeciduous.contents.distributeprefabs.berrygree = .03
-GLOBAL.terrain.rooms.DeepDeciduous.contents.distributeprefabs.berrygre2 = .02
-GLOBAL.terrain.rooms.DeepDeciduous.contents.distributeprefabs.appletree = .08
+    AddBerries(GLOBAL.terrain.rooms.DeepDeciduous, .06, .04, .03, .02)
+    AddAppleTrees(GLOBAL.terrain.rooms.DeepDeciduous, .08)
 end
 if GLOBAL.terrain.rooms.BGDeciduous then
-GLOBAL.terrain.rooms.BGDeciduous.contents.distributeprefabs.berryblue = .09
-GLOBAL.terrain.rooms.BGDeciduous.contents.distributeprefabs.berryblu2 = .045
-GLOBAL.terrain.rooms.BGDeciduous.contents.distributeprefabs.berrygree = .045
-GLOBAL.terrain.rooms.BGDeciduous.contents.distributeprefabs.berrygre2 = .023
+    AddBerries(GLOBAL.terrain.rooms.BGDeciduous, .09, .045, .045, .023)
 end
 
 if GLOBAL.terrain.rooms.DeciduousMole then
-GLOBAL.terrain.rooms.DeciduousMole.contents.distributeprefabs.berryblue = .04
-GLOBAL.terrain.rooms.DeciduousMole.contents.distributeprefabs.berryblu2 = .02
-GLOBAL.terrain.rooms.DeciduousMole.contents.distributeprefabs.berrygree = .015
-GLOBAL.terrain.rooms.DeciduousMole.contents.distributeprefabs.berrygre2 = .01
+    AddBerries(GLOBAL.terrain.rooms.DeciduousMole, .04, .02, .015, .01)
 end
 if GLOBAL.terrain.rooms.MolesvilleDeciduous then
-GLOBAL.terrain.rooms.MolesvilleDeciduous.contents.distributeprefabs.berryblue = .07
-GLOBAL.terrain.rooms.MolesvilleDeciduous.contents.distributeprefabs.berryblu2 = .035
-GLOBAL.terrain.rooms.MolesvilleDeciduous.contents.distributeprefabs.berrygree = .035
-GLOBAL.terrain.rooms.MolesvilleDeciduous.contents.distributeprefabs.berrygre2 = .017
-GLOBAL.terrain.rooms.MolesvilleDeciduous.contents.distributeprefabs.appletree = .1
+    AddBerries(GLOBAL.terrain.rooms.MolesvilleDeciduous, .07, .035, .035, .017)
+    AddAppleTrees(GLOBAL.terrain.rooms.MolesvilleDeciduous, .1)
 end
 if GLOBAL.terrain.rooms.DeciduousClearing then
-GLOBAL.terrain.rooms.DeciduousClearing.contents.distributeprefabs.berryblue = .08
-GLOBAL.terrain.rooms.DeciduousClearing.contents.distributeprefabs.berryblu2 = .04
-GLOBAL.terrain.rooms.DeciduousClearing.contents.distributeprefabs.berrygree = .035
-GLOBAL.terrain.rooms.DeciduousClearing.contents.distributeprefabs.berrygre2 = .02
-GLOBAL.terrain.rooms.DeciduousClearing.contents.distributeprefabs.appletree = .5
+    AddBerries(GLOBAL.terrain.rooms.DeciduousClearing, .08, .04, .035, .02)
+    AddAppleTrees(GLOBAL.terrain.rooms.DeciduousClearing, .5)
 end
 if GLOBAL.terrain.rooms.MagicalDeciduous then
-GLOBAL.terrain.rooms.MagicalDeciduous.contents.distributeprefabs.berryblue = .1
-GLOBAL.terrain.rooms.MagicalDeciduous.contents.distributeprefabs.berryblu2 = .05
-GLOBAL.terrain.rooms.MagicalDeciduous.contents.distributeprefabs.berrygree = .05
-GLOBAL.terrain.rooms.MagicalDeciduous.contents.distributeprefabs.berrygre2 = .025
+    AddBerries(GLOBAL.terrain.rooms.MagicalDeciduous, .1, .05, .05, .025)
 end
 if GLOBAL.terrain.rooms.PondyGrass then
-GLOBAL.terrain.rooms.PondyGrass.contents.distributeprefabs.berryblue = .09
-GLOBAL.terrain.rooms.PondyGrass.contents.distributeprefabs.berryblu2 = .045
-GLOBAL.terrain.rooms.PondyGrass.contents.distributeprefabs.berrygree = .04
-GLOBAL.terrain.rooms.PondyGrass.contents.distributeprefabs.berrygre2 = .022
+    AddBerries(GLOBAL.terrain.rooms.PondyGrass, .09, .045, .04, .022)
 end
 if GLOBAL.terrain.rooms.BGGrass then
-GLOBAL.terrain.rooms.BGGrass.contents.distributeprefabs.berryblue = .05
-GLOBAL.terrain.rooms.BGGrass.contents.distributeprefabs.berryblu2 = .025
-GLOBAL.terrain.rooms.BGGrass.contents.distributeprefabs.berrygree = .025
-GLOBAL.terrain.rooms.BGGrass.contents.distributeprefabs.berrygre2 = .012
-GLOBAL.terrain.rooms.BGGrass.contents.distributeprefabs.pineapple = .05
-GLOBAL.terrain.rooms.BGGrass.contents.distributeprefabs.appletree = .02
+    AddBerries(GLOBAL.terrain.rooms.BGGrass, .05, .025, .025, .012)
+    AddPineapples(GLOBAL.terrain.rooms.BGGrass, .05)
+    AddAppleTrees(GLOBAL.terrain.rooms.BGGrass, .02)
 end
 if GLOBAL.terrain.rooms.BGGrassBurnt then
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berryblue = .06
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berryblu2 = .03
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berrygree = .03
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berrygre2 = .015
+    AddBerries(GLOBAL.terrain.rooms.BGGrassBurnt, .06, .03, .03, .015)
 end
 
 if GLOBAL.terrain.rooms.BGDeepForest then
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berryblue = .02
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berryblu2 = .01
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berrygree = .01
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berrygre2 = .005
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.appletree = .3
+    AddBerries(GLOBAL.terrain.rooms.BGGrassBurnt, .02, .01, .01, .005)
+    AddAppleTrees(GLOBAL.terrain.rooms.BGGrassBurnt, .3)
 end
 
 if GLOBAL.terrain.rooms.BGForest then
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berryblue = .01
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berryblu2 = .005
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berrygree = .005
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.berrygre2 = .002
-GLOBAL.terrain.rooms.BGGrassBurnt.contents.distributeprefabs.appletree = .1
+    AddBerries(GLOBAL.terrain.rooms.BGGrassBurnt, .01, .005, .005, .002)
+    AddAppleTrees(GLOBAL.terrain.rooms.BGGrassBurnt, .1)
 end
 
 
 if GLOBAL.terrain.rooms.BGBadlands then
-    GLOBAL.terrain.rooms.BGBadlands.contents.distributeprefabs.pineapple = 0.35
+    AddPineapples(GLOBAL.terrain.rooms.BGBadlands, 0.35)
 end
 if GLOBAL.terrain.rooms.Lightning then
-    GLOBAL.terrain.rooms.Lightning.contents.distributeprefabs.pineapple = 0.2
+    AddPineapples(GLOBAL.terrain.rooms.Lightning, 0.2)
 end
 if GLOBAL.terrain.rooms.Badlands then
-    GLOBAL.terrain.rooms.Badlands.contents.distributeprefabs.pineapple = 0.4
+    AddPineapples(GLOBAL.terrain.rooms.Badlands, 0.4)
 end
 if GLOBAL.terrain.rooms.HoundyBadlands then
-    GLOBAL.terrain.rooms.HoundyBadlands.contents.distributeprefabs.pineapple = 0.2
+    AddPineapples(GLOBAL.terrain.rooms.HoundyBadlands, 0.2)
 end
 if GLOBAL.terrain.rooms.BuzzardyBadlands then
-    GLOBAL.terrain.rooms.BuzzardyBadlands.contents.distributeprefabs.pineapple = 0.2
+    AddPineapples(GLOBAL.terrain.rooms.BuzzardyBadlands, 0.2)
 end
 
-GLOBAL.terrain.filter.berryblue = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER, GLOBAL.GROUND.ROCKY, GLOBAL.GROUND.MARSH}
-GLOBAL.terrain.filter.berryblu2 = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER, GLOBAL.GROUND.ROCKY, GLOBAL.GROUND.MARSH}
-GLOBAL.terrain.filter.berrygree = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER, GLOBAL.GROUND.ROCKY, GLOBAL.GROUND.MARSH}
-GLOBAL.terrain.filter.berrygre2 = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER, GLOBAL.GROUND.ROCKY, GLOBAL.GROUND.MARSH}
-GLOBAL.terrain.filter.pineapple = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER, GLOBAL.GROUND.ROCKY, GLOBAL.GROUND.MARSH}
-GLOBAL.terrain.filter.appletree = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER, GLOBAL.GROUND.ROCKY, GLOBAL.GROUND.MARSH}
+-- Set terrain filters for each prefab type based on config
+if BLUEBERRY_ENABLED then
+    GLOBAL.terrain.filter.berryblue = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER, GLOBAL.GROUND.ROCKY, GLOBAL.GROUND.MARSH}
+    GLOBAL.terrain.filter.berryblu2 = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER, GLOBAL.GROUND.ROCKY, GLOBAL.GROUND.MARSH}
+end
+if GREENBERRY_ENABLED then
+    GLOBAL.terrain.filter.berrygree = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER, GLOBAL.GROUND.ROCKY, GLOBAL.GROUND.MARSH}
+    GLOBAL.terrain.filter.berrygre2 = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER, GLOBAL.GROUND.ROCKY, GLOBAL.GROUND.MARSH}
+end
+if PINEAPPLE_ENABLED then
+    GLOBAL.terrain.filter.pineapple = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER, GLOBAL.GROUND.ROCKY, GLOBAL.GROUND.MARSH}
+end
+if APPLETREE_ENABLED then
+    GLOBAL.terrain.filter.appletree = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER, GLOBAL.GROUND.ROCKY, GLOBAL.GROUND.MARSH}
+end

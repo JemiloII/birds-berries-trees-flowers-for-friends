@@ -155,11 +155,15 @@
       }
     AddCookerRecipe("cookpot", treeapplepierecipe)
 
-        AddPrefabPostInit("forest", function(inst)
-          if GLOBAL.TheWorld.ismastersim then 
-            inst:AddComponent("newbirdspawner")
-          end
-        end)
+        -- Add custom bird spawner if birds are enabled
+        local BIRDS_ENABLED = GetModConfigData("birds_enabled")
+        if BIRDS_ENABLED then
+          AddPrefabPostInit("forest", function(inst)
+            if GLOBAL.TheWorld.ismastersim then
+              inst:AddComponent("newbirdspawner")
+            end
+          end)
+        end
 
 
 

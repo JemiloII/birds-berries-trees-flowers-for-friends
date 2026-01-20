@@ -238,6 +238,12 @@ local function ondiseasedfn(inst)
 end
 
 local function makediseaseable(inst)
+    -- Check if bush disease is enabled in mod config
+    local BUSH_DISEASE_ENABLED = GetModConfigData("bush_disease_enabled")
+    if not BUSH_DISEASE_ENABLED then
+        return
+    end
+
     if inst.components.diseaseable == nil then
         inst:AddComponent("diseaseable")
         inst.components.diseaseable:SetDiseasedFn(ondiseasedfn)
