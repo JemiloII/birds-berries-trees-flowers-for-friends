@@ -13,17 +13,6 @@ dst_compatible = true
 configuration_options =
 {
     {
-        name = "bush_disease_enabled",
-        label = "Bush Disease",
-        hover = "Enable or disable disease mechanic for berry bushes (causes bushes to die)",
-        options =
-        {
-            {description = "Disabled", data = false},
-            {description = "Enabled", data = true},
-        },
-        default = false,
-    },
-    {
         name = "disease_birds_enabled",
         label = "Disease Birds",
         hover = "Enable or disable sick birds (Dirtybird and Yellowbird)",
