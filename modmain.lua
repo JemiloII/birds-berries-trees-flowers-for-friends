@@ -28,7 +28,7 @@
            Asset("ATLAS", "images/inventoryimages/tucan.xml"),
            Asset("ATLAS", "images/inventoryimages/sickv.xml"),
            Asset("ATLAS", "images/inventoryimages/ntpie.xml"),
-	         Asset("ATLAS", "images/inventoryimages/blueberry.xml"),
+           Asset("ATLAS", "images/inventoryimages/blueberry.xml"),
            Asset("ATLAS", "images/inventoryimages/blueberrydug.xml"),
            Asset("ATLAS", "images/inventoryimages/blueberry2dug.xml"),
            Asset("ATLAS", "images/inventoryimages/pappfruit.xml"),
