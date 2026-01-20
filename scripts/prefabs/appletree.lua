@@ -638,7 +638,7 @@ local function tree(name, build, stage, data)
         inst.growfromseed = handler_growfromseed
 
 		-- Add apple tree regrowth based on configuration
-        local TREE_REGROWTH_MULTIPLIER = GetModConfigData("tree_regrowth")
+        local TREE_REGROWTH_MULTIPLIER = GetModConfigData("tree_regrowth", "Birds, Berries, Trees, and Flowers for Friends")
         if TREE_REGROWTH_MULTIPLIER > 0 then
             inst:AddComponent("appleregrowth")
             -- Base regrowth rate is 5760, adjusted by multiplier
