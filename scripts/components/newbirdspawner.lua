@@ -10,8 +10,11 @@ assert(TheWorld.ismastersim, "BirdSpawner should not exist on client")
 --[[ Constants ]]
 --------------------------------------------------------------------------
 
+-- Get disease configuration
+local DISEASE_ENABLED = GetModConfigData("disease_enabled")
+
 --Note: in winter, 'robin' is replaced with 'robin_winter' automatically
-local BIRD_TYPES =
+local BIRD_TYPES_ALL =
 {
     --[GROUND.IMPASSABLE] = { "" },
     --[GROUND.ROAD] = {"robye", "sickv"},
@@ -31,6 +34,27 @@ local BIRD_TYPES =
     [GROUND.OCEAN_REEF_SHORE] = {},
     [GROUND.OCEAN_HAZARDOUS] = {},
 }
+
+-- Filter out disease birds if disease is disabled
+local function FilterDiseaseBirds(bird_types)
+    if DISEASE_ENABLED then
+        return bird_types
+    end
+
+    local filtered = {}
+    for ground_type, birds in pairs(bird_types) do
+        filtered[ground_type] = {}
+        for _, bird in ipairs(birds) do
+            -- Remove sick birds (sickv = Dirtybird, robgr = Yellowbird)
+            if bird ~= "sickv" and bird ~= "robgr" then
+                table.insert(filtered[ground_type], bird)
+            end
+        end
+    end
+    return filtered
+end
+
+local BIRD_TYPES = FilterDiseaseBirds(BIRD_TYPES_ALL)
 
 --------------------------------------------------------------------------
 --[[ Member variables ]]

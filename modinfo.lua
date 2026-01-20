@@ -9,3 +9,18 @@ icon_atlas = "berryblue.xml"
 icon = "berryblue.tex"
 all_clients_require_mod = true
 dst_compatible = true
+
+configuration_options =
+{
+    {
+        name = "disease_enabled",
+        label = "Disease Birds",
+        hover = "Enable or disable sick birds (Dirtybird and Yellowbird)",
+        options =
+        {
+            {description = "Disabled", data = false},
+            {description = "Enabled", data = true},
+        },
+        default = false,
+    },
+}
