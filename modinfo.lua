@@ -82,15 +82,4 @@ configuration_options =
         },
         default = true,
     },
-    {
-        name = "disease_birds_enabled",
-        label = "Disease Birds",
-        hover = "Enable or disable sick birds (Dirtybird and Yellowbird)",
-        options =
-        {
-            {description = "Disabled", data = false},
-            {description = "Enabled", data = true},
-        },
-        default = false,
-    },
 }
