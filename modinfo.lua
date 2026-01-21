@@ -1,8 +1,8 @@
 name = "Birds, Berries, Trees, and Flowers for Friends"
 description = "Adds a number of plants, birds, and food types to the world"
-author = "UnderwearApprentice"
-version = "3.0.0"
-forumthread = "theinternet"
+author = "Shibiko, UnderwearApprentice"
+version = "3.0.1"
+forumthread = "https://github.com/jemiloii/birds-berries-trees-and-flowers-for-friends"
 api_version = 10
 icon_atlas = "berryblue.xml"
 icon = "berryblue.tex"
